@@ -1,5 +1,4 @@
 from sklearn.ensemble import RandomForestClassifier
-from sklearn import metrics
 
 # the function provides a quick way to control the unique values in each column of a DataFrame
 def print_unique_values(df):
@@ -39,29 +38,3 @@ def impute_missing_values_with_random_forest(df, column_name):
     # Fill in the missing values in the original DataFrame
     df.loc[df[column_name].isna(), column_name] = predicted_values
     return df
-
-def model_evaluation(model, X_test, y_test, model_name):
-    y_pred = model.predict(X_test)
-
-    MAE = metrics.mean_absolute_error(y_test, y_pred)
-    print(f'MAE score is: {MAE}')
-    MSE = metrics.mean_squared_error(y_test, y_pred)
-    print(f'MSE score is: {MSE}')
-    RMSE = np.sqrt(MSE)
-    print(f'RMSE score is: {RMSE}')
-    R2_Score = metrics.r2_score(y_test, y_pred)
-    print(f'R2_Score score is: {R2_Score}')
-    
-    return pd.DataFrame([MAE, MSE, RMSE, R2_Score], index=['MAE', 'MSE', 'RMSE' ,'R2-Score'], columns=[model_name])
-
-
-
-def model_train(X,y,model):
-    #split dataset by taking 80% of data for training and 20% of data for testing.
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-
-    model.fit(X_train, y_train)
-
-    model_evaluation(model, X_test, y_test, 'Linear Reg.')
-    
-    return model

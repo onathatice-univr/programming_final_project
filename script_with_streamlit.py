@@ -26,7 +26,7 @@ def main():
         "Sessions",
         ("Data Exploration", "Dataset cleaning", "Plots", "Model")
     )
-    df_exam_score = pd.read_csv("Expanded_data_with_more_features.csv")
+    df_exam_score = pd.read_csv("exam_score_dataset.csv")
     pd.options.display.float_format = '{:,.2f}'.format
     
     df_exam_score.drop('Unnamed: 0',axis=1, inplace=True)

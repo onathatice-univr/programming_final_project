@@ -3,6 +3,6 @@ numpy
 matplotlib
 seaborn
 sklearn
-xgboost
 scipy
+xgboost
 streamlit

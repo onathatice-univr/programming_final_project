@@ -8,7 +8,7 @@ script_with_streamlit.py: Python code with Streamlit for improved project presen
 exam_score_dataset.csv: Dataset used for the project.
 requirements.txt: Lists necessary Python libraries.
 
-## Dataset Information [Go to Dataset]([link](https://www.kaggle.com/datasets/desalegngeb/students-exam-scores?select=Expanded_data_with_more_features.csv)):
+## [Dataset Information](https://www.kaggle.com/datasets/desalegngeb/students-exam-scores?select=Expanded_data_with_more_features.csv):
     • Gender: Gender of the student (male/female)
     • EthnicGroup: Ethnic group of the student (group A to E)
     • ParentEduc: Parent(s) education background (from some_highschool to master's degree)

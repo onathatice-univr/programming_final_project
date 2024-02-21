@@ -13,6 +13,28 @@ from scipy import stats
 
 
 def main():
+
+    ## SIDEBAR ##
+    st.sidebar.title('Students Exam Score Anlysis')
+    session_selection = st.sidebar.radio(
+        "Sessions",
+        ("Data Exploration", "Dataset cleaning", "Plots", "Model")
+    )
+    
+    if session_selection == "Data Exploration":
+        st.write("Data Exploration")
+
+    elif session_selection == "Dataset cleaning":
+        st.write("Dataset cleaning")
+
+    elif session_selection == "Plots":
+        st.write("Plots")
+    
+    elif session_selection == "Model":
+        st.write("Model")
+
+
+    ## CONTENT ##
     st.title("FINAL PROJECT: STUDENTS EXAM SCORE")
     st.markdown("Data science project presentation!")
 

@@ -136,9 +136,21 @@ def main():
             ]
             for feature in features:
                 st.write(feature)
-
-        st.write("## Data Cleaning")
         st.dataframe(df_exam_score.head())
+        fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(12, 4))
+        df_exam_score['MathScore'].plot(kind='hist', bins=100, ax=axes[0], title='Math Score')
+        df_exam_score['ReadingScore'].plot(kind='hist', bins=100, ax=axes[1], title='Reading Score')
+        df_exam_score['WritingScore'].plot(kind='hist', bins=100, ax=axes[2], title='Writing Score')
+
+        for ax in axes:
+            ax.set_xlabel('Score')
+            ax.set_ylabel('Frequency')
+
+        plt.tight_layout() # to avoid overlap
+        plt.show()
+
+        st.write("## Dataset Plot")
+        st.pyplot(fig)
 
 #_______________###############_______________
     elif session_selection == "Dataset cleaning":
